@@ -1,0 +1,10 @@
+services:
+  phx-basics-dev:
+    image: muel/phoenix-basics:latest
+    ports:
+      - "4000:4000"
+    networks:
+      - phx-basics-dev-net
+
+networks:
+  phx-basics-dev-net:

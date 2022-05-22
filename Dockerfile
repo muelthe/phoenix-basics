@@ -11,5 +11,3 @@ RUN apt-get install -y inotify-tools \
 RUN mix local.rebar --force
 
 EXPOSE 4000
-
-CMD ["bash"]
