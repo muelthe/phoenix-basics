@@ -1,5 +1,5 @@
 # phoenix-basics
-Dockerfile for building a basic Phoenix web framework Docker container to support development.
+Dockerfile for building a container to support development using a simple setup of the Phoenix web framework (https://phoenixframework.org/).
 
 # example
 From the directory containing the Dockerfile:
