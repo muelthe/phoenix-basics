@@ -3,8 +3,15 @@ services:
     image: muel/phoenix-basics:latest
     ports:
       - "4000:4000"
+    volumes:
+      - type: volume
+        source: phx-basics-vol
+        target: /app
     networks:
       - phx-basics-dev-net
 
+volumes:
+  phx-basics-vol: {}
+
 networks:
-  phx-basics-dev-net:
+  phx-basics-dev-net: {}
