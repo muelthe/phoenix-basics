@@ -1,17 +1,38 @@
 services:
-  phx-basics-dev:
+  dev:
     image: muel/phoenix-basics:latest
+    init: true
+    stdin_open: true
+    tty: true
     ports:
       - "4000:4000"
     volumes:
       - type: volume
-        source: phx-basics-vol
+        source: dev-vol
         target: /app
     networks:
-      - phx-basics-dev-net
+      - dev-net
+
+  db:
+    image: postgres:alpine
+    init: true
+    environment:
+      POSTGRES_PASSWORD: "postgres" # add through file/docker secrets (examples: https://hub.docker.com/_/postgres)
+      # set default user and db?
+      # POSTGRES_USER
+      # POSTGRES_DB
+      # set locale (default is US - there are specific allowances to be made with an alpine based image)
+      # create a working database (see script examples: https://hub.docker.com/_/postgres)
+    volumes:
+      - type: volume
+        source: db-vol
+        target: /var/lib/postgresql/data
+    networks:
+      - dev-net
 
 volumes:
-  phx-basics-vol: {}
+  dev-vol: {}
+  db-vol: {}
 
 networks:
-  phx-basics-dev-net: {}
+  dev-net: {}
