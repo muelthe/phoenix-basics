@@ -17,12 +17,8 @@ services:
     image: postgres:alpine
     init: true
     environment:
-      POSTGRES_PASSWORD: "postgres" # add through file/docker secrets (examples: https://hub.docker.com/_/postgres)
-      # set default user and db?
-      # POSTGRES_USER
-      # POSTGRES_DB
-      # set locale (default is US - there are specific allowances to be made with an alpine based image)
-      # create a working database (see script examples: https://hub.docker.com/_/postgres)
+      POSTGRES_PASSWORD: ${PSQL_PWD}
+      LANG: en_GB.UTF8
     volumes:
       - type: volume
         source: db-vol
