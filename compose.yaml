@@ -1,6 +1,8 @@
 services:
   dev:
-    image: muel/phoenix-basics:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     init: true
     stdin_open: true
     tty: true
