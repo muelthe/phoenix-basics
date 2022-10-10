@@ -5,9 +5,9 @@ RUN mix archive.install hex phx_new --force
 
 RUN apt-get update -y
 RUN apt-get install -y inotify-tools \
-&& apt-get install -y apt-utils \
-&& apt-get install -y build-essential \
-&& apt-get install -y nano
+apt-utils \
+build-essential \
+nano
 
 RUN mix local.rebar --force
 
